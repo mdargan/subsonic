@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <include layout="@layout/download_song_info" />
+
+    <net.sourceforge.subsonic.androidapp.util.MyViewFlipper
+        android:id="@+id/download_playlist_flipper"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/download_album_art_image"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                android:src="@drawable/unknown_album_large" />
+
+            <include
+                layout="@layout/download_overlay_buttons"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true" />
+
+            <LinearLayout
+                android:id="@+id/download_visualizer_view_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+
+        <include layout="@layout/download_playlist" />
+
+    </net.sourceforge.subsonic.androidapp.util.MyViewFlipper>
+
+    <include layout="@layout/download_media_controls" />
+
+    <include layout="@layout/button_bar" />
+
+</LinearLayout>
+
